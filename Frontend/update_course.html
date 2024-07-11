@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/update_course.css" />
+    <title>Edit Course</title>
+  </head>
+  <body style="background-color: #cbd2d8e5;">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main"
+          aria-controls="main"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="Allcourses.html"
+                >All Courses</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="lecture.html"
+                >All Lectures</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="course" id="course">
+        <div class="course-content">
+          <h1 class="title">Edit Course</h1>
+          <hr>
+          <form class="details" id="updateForm">
+
+            <div class="row ms-12">
+                <div class="col-md-6">
+                  <label for="courseName" class="form-label">Course name <span style="color: red;">*</span></label>
+                  <input type="text" class="form-control" id="courseName" value="" required>
+                </div>
+              <div class="col-md-6">
+                <label for="level" class="form-label ms-2">Level <span style="color: red;">*</span></label>
+                <input type="number" class="form-control" id="level" value="" required>
+              </div>
+            </div>
+
+            <div class="row ms-12">
+                <div class="col-md-6">
+                  <label for="semester" class="form-label">Semester <span style="color: red;">*</span></label>
+                  <div class="input-group has-validation">
+                  <input type="number" class="form-control" id="semester" value="" aria-describedby="inputGroupPrepend" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="departement" class="form-label ms-2">Departement</label>
+                  <input type="text" class="form-control" id="departement" value="" aria-describedby="inputGroupPrepend">
+                </div>
+            </div>
+
+            <div class="row ms-12">
+                <div class="col-md-6">
+                  <label for="creditHours" class="form-label">Credit hours</label>
+                  <div class="input-group has-validation">
+                  <input type="number" class="form-control" id="creditHours" value="" aria-describedby="inputGroupPrepend">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="rate" class="form-label ms-2">Lowest Attendance Rate</label>
+                  <input type="number" class="form-control" id="rate" value="" aria-describedby="inputGroupPrepend">
+                </div>
+            </div>
+
+            <div class="row ms-12">
+              <div class="col-md-12">
+                <label for="courseNotes" class="form-label ms-2"style="">Instructions</label>
+                <br>
+                <input type="text" name="courseNotes" value="None" class="form-control" id="courseNotes" style="width: 380px;"></input>
+              </div>
+            </div>
+            
+              <br />
+              <div class="btn col-md-12">
+              <button class="save course-button rounded-pill" id="save">Save change</button>
+              <a href="Allcourses.html" class="course-button rounded-pill col-md-3">Back</a>
+              </div>
+          
+          </form>
+        </div>
+    </section>
+
+    <div id="lecturesContainer"></div> <!-- Add this element if it doesn't already exist -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/window.js"></script> <!-- Make sure this script is present -->
+  </body>
+</html>

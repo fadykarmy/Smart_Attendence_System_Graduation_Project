@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo";
+  transition: 0.5s all;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #ebf3e8;
+  --container-color: #04364a;
+  --section1: #ebf3e8;
+  --section2: #d2e3c8;
+  --section3: #ebf3e8;
+  --font-color: #3a4d39;
+  /* --header-color:#85a183; */
+  --header-color: #176b87;
+  --btn-color: #638889;
+}
+body {
+  width: auto;
+  max-height: 150vh;
+  letter-spacing: 1px;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: column wrap;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+.navbar .container-fluid a.navbar-brand img {
+  width: 190px;
+  height: 50px;
+  margin-left: 20%;
+}
+
+.navbar {
+  background-color: var(--container-color);
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.068);
+  width: 100%;
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.8s;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--section2);
+  text-decoration: none;
+  font-size: 19px;
+  transition: 0.3 all;
+}
+.main_header {
+  color: #fff;
+  font-size: 30px;
+  margin: 30px 0px 20px 100px;
+}
+th {
+  /* align-items: center; */
+  text-align: center;
+  font-size: 22px;
+  border: none !important;
+}
+td {
+  text-align: center;
+  border: none;
+  color: white !important;
+  font-size: 19px;
+}
+tbody {
+  color: #fff !important;
+}
+.fa-check {
+  font-size: 29px !important;
+  text-align: center;
+  color: rgb(79, 252, 79) !important;
+}
+.fa-xmark {
+  color: red;
+}
+
+.submit-btn-contact {
+  color: var(--container-color);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  background-color: rgb(240, 236, 236);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  margin: 0 0px 0 50px;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.submit-btn-contact:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--section2);
+  background-color: var(--container-color);
+}
+.js-delete {
+  width: 50px;
+  margin-top: 5px;
+}
+.updateBtn {
+  width: 50px;
+}

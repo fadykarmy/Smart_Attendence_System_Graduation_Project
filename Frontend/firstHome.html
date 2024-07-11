@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Home page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/firstHome.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start Nav -->
+          <!-- sticky-top علشان اخلى nav bar ثابته-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="firstHome.html">
+          <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main"
+          aria-controls="main"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#chose">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#server">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <!-- <div class="search ps-3 pe-3 d-none d-lg-block">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div> -->
+          <a
+            href="sign_up.html"
+            class="main-btn login rounded-pill"
+            style="width: 110px; font-weight: 600; margin-left: 10px"
+            >Register</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- End Nav -->
+
+    <!-- landing -->
+    <section class="home" id="home">
+      <div class="container">
+        <div class="home-content">
+          <h1 class="header-home text-capitalize">SMART</h1>
+          <h2 class="header-home text-capitalize" style="color: gold">
+            ATTENDENCE
+          </h2>
+          <p class="text text-white-50" style="color: white !important">
+            In light of the need for social distancing following Covid-19 we
+            have designed a system that addresses the problem of student
+            attendance in Faculty. They were utilizing a paper-based approach to
+            keep track of their attendance For students to take attendance, a
+            (Face recognition & fingerprint & QR code) will be provided. The
+            professor is in charge of determining whether or not all of the
+            students in the group or class are present, To authenticate their
+            attendance and exit.
+          </p>
+          <a href="sign_up.html" class="submit-btn rounded-pill">Register</a>
+        </div>
+
+        <div class="home-img">
+          <img
+            class="home-image"
+            width="500px"
+            height="500px"
+            src="img/ImageBackground.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+    <!-- End loding -->
+
+    <div class="one">
+      <!-- section1 left -->
+      <div class="left" id="chose">
+        <h2 class="heading-section">Features</h2>
+
+        <div class="Choices row gx-5">
+          <div class="chose chose--one col-md-6 col-lg-4 p-2">
+            <i class="fa-solid fa-people-arrows"></i>
+            <div class="text">
+              <h3>Social Distancing</h3>
+              <p class="text-black-50">
+                Social distancing after Covid-19 and not exchanging tools
+                (absence paper or pens)
+              </p>
+            </div>
+          </div>
+          <div class="chose chose--two col-md-6 col-lg-4 p-2">
+            <i class="fa-regular fa-clipboard"></i>
+            <div class="text">
+              <h3>Regular Manner</h3>
+              <p class="text-black-50">
+                Facilitate the process of taking absence student and to show it
+                the professor in a regular manner
+              </p>
+            </div>
+          </div>
+          <div class="chose chose--three col-md-6 col-lg-4 p-2">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="text">
+              <h3>detect location</h3>
+              <p class="text-black-50">
+                Not taking the presence of an absent student who is not present
+                in the lecture (detect location)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="right" id="server">
+        <h2 class="heading-section">Services</h2>
+        <div class="servers row gx-5">
+          <div class="server server--1 col-md-6 col-lg-4 p-2">
+            <div class="text">
+              <i class="fa-solid fa-laptop-code"></i>
+              <h3>Fully Responsive Admin Panel</h3>
+              <p class="text-black-50 p-2">
+                Flexible Admin Panel and user friendly administrative interface
+                to manage almost everything. Every instructor & student consist
+                of his/her own access to the back-end to see the previous
+                records and history of their attendance and other activities.
+              </p>
+            </div>
+          </div>
+          <div class="server server--2 col-md-6 col-lg-4 p-2">
+            <div class="text">
+              <i class="fa-solid fa-table-columns"></i>
+              <h3>Highly interactive Dashboard</h3>
+              <p class="text-black-50">
+                Easy-to-use administrative panel with a highly efficient
+                dashboard that aims to provide a quick overview of the latest
+                happenings and keep you updated about the status of the app.
+              </p>
+            </div>
+          </div>
+          <div class="server server--3 col-md-6 col-lg-4 p-2">
+            <div class="text">
+              <i class="fa-regular fa-flag"></i>
+              <h3>Reporting Management</h3>
+              <p class="text-black-50">
+                The part of management that enables the instructorto to access
+                and view the reports of the student’s activity of check-in and
+                check-out on monthly and individually basis.
+              </p>
+            </div>
+          </div>
+          <div class="server server--3 col-md-6 col-lg-4 p-2">
+            <div class="text">
+              <i class="fa-solid fa-list-check"></i>
+              <h3>User Management</h3>
+              <p class="text-black-50">
+                User management consist of instructor&students and their
+                profiles accordingly. Add new instructor or students or edit
+                details of profile and take any action from back-end.
+              </p>
+            </div>
+          </div>
+          <div class="server server--3 col-md-6 col-lg-4 p-2">
+            <div class="text">
+              <i class="fa-solid fa-clock"></i>
+              <h3>Optional Manual Attendance System</h3>
+              <p class="text-black-50">
+                This part is optional and to mark attendance manually in case if
+                any student forget to mark his/her attendance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- start about -->
+    <section class="about" id="about">
+      <div class="heading-about">
+        <h2 class="heading-section mt-4">About us</h2>
+      </div>
+      <div class="container">
+        <div class="about-img">
+          <img
+            src="img/staff-attendance-01-removebg-preview.png"
+            alt=""
+            class="about-image"
+          />
+        </div>
+        <div class="about-content">
+          <h3 class="text-about text-capitalize">Welcome to our website!</h3>
+          <p class="text-black-50">
+            Take attendance in no time! The first ever automatic student
+            attendance tracker which is secured and fully monitored web-based
+            system.
+          </p>
+          <a href="#" class="about-button rounded-pill">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <!--End about-->
+
+    <!--Start contact-->
+    <div class="contact" id="contact">
+      <div class="get_in_touch">
+        <h2 class="heading-section-contact mb-3">contact</h2>
+        <!-- <h2 class="title-contact">get in touch</h2> -->
+        <div class="container-contact">
+          <div class="contact-form row">
+            <div class="form-field col-lg-6">
+              <input
+                id="name"
+                class="input-text rounded-pill"
+                type="text"
+                name=""
+              />
+              <label for="name" class="label"
+                ><i class="fa-regular fa-user"></i> Name</label
+              >
+            </div>
+            <div class="form-field col-lg-6">
+              <input
+                type="email"
+                id="email"
+                class="input-text rounded-pill"
+                name=""
+              />
+              <label for="email" class="label"
+                ><i class="fa-solid fa-envelope"></i> Email</label
+              >
+            </div>
+            <div class="form-field col-lg-6">
+              <input
+                id="phone"
+                class="input-text rounded-pill"
+                type="text"
+                name=""
+              />
+              <label for="phone" class="label"
+                ><i class="fa-solid fa-phone"></i> Phone</label
+              >
+            </div>
+            <div class="form-field col-lg-6">
+              <input
+                id="subject"
+                class="input-text rounded-pill"
+                type="text"
+                name=""
+              />
+              <label for="subject" class="label"
+                ><i class="fa-regular fa-note-sticky"></i> Subject</label
+              >
+            </div>
+            <div class="form-field col-lg-12">
+              <input
+                id="message"
+                class="input-text rounded-pill"
+                type="text"
+                name=""
+              />
+              <label for="message" class="label"
+                ><i class="fa-regular fa-message"></i> Message</label
+              >
+            </div>
+            <div class="form-field col-lg-12">
+              <a
+                href="#"
+                class="submit-btn-contact rounded-pill"
+                style="width: 200px"
+                >Send</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Start footer-->
+    <footer class="footer_area">
+      <div class="footer_social_area">
+        <h4 class="social-header">
+          <!-- <i class="fa-solid fa-mobile-screen-button"></i> -->
+          <img src="https://smartattendanceapp.com/img/logo.png" width="250" />
+        </h4>
+        <ul class="social_f">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/i/flow/single_sign_on" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/home" target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.google.com/intl/ar/gmail/about/"
+              target="_blank"
+              ><i class="fa-brands fa-google"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer_copyright">
+        <h4 class="text-white-50">Copyright © 2024 - Attendance_AI</h4>
+        <h4 style="padding-top: 10px">
+          <a href="#" style="text-decoration: none" target="_blank"
+            >Privacy Policy</a
+          >
+        </h4>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="header-landing">
+  <main id="main-section" class="landing">
+
+    <div class="container">
+      <section class="main-left">
+        <h1>Attendance_AI</h1>
+        <p class="text-white-50 mb-5 mt-5">
+          In light of the need for social distancing following Covid-19 we have designed a system that addresses the problem of student attendance in Collage.
+          They were utilizing a paper-based approach to keep track of their attendance
+          For pupils to take attendance, a (Face recognition & fingerprint & QR code) will be provided.
+          The professor is in charge of determining whether or not all of the pupils in the group or class are present.
+          To authenticate their attendance and exit, users will only need their smartphones.
+        </p>
+
+        <a href="#" class="submit-btn rounded-pill" style="width: 200px;">Register</a>
+      </section>
+      <section class="main-right">
+        <img
+          src="https://i.pinimg.com/1200x/56/31/5c/56315c3a108068a2d9a6287dc7e7c0fb.jpg"
+          alt=""
+        />
+      </section>
+    </div>
+  </main>
+  </div> -->
+
+<!-- <div class="landing">
+    <div class="text-center text-light">
+      <div class="main-head">
+        <h1 class="main-head mb-4">Attendance_AI</h1>
+      </div>
+      <div class="prag">
+        <p class="fs-5 text-white-50 mb-4">
+          In light of the need for social distancing following Covid-19 we have designed a system that addresses the problem of student attendance in Collage. They were utilizing a paper-based approach to keep track of their attendance
+          For pupils to take attendance, a (Face recognition & fingerprint & QR code) will be provided. The professor is in charge of determining whether or not all of the pupils in the group or class are present. To authenticate their attendance and exit, users will only need their smartphones.
+        </p>
+      </div>
+      
+      <a href="#" class="submit-btn rounded-pill" style="width: 200px;">Register</a>
+    </div>
+  </div> -->
+
+<!-- start about
+  <div class="about pt-1 pb-3" id="about">
+    <div class="container-fluid">
+      <div class="mt-4">
+        <h2 class="heading-section">About</h2>
+        <p class="text-about text-uppercase text-black-50 text-center" style="font-weight: bold">If you have any comment or problem connect us.</p>
+        <h2 class="mb-5">Our Team</h2>
+      </div> -->
+<!-- <div class="row gx-4" id="about-row">
+        <div class="col-md-6 col-lg-2 ">
+          <div class="card">
+                                     <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">Doaa</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">doaa@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                                 <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">fady</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">fady@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                               <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">gorg</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">gorg@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                            <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">Aya</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">aya@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                           <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">fady</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">fady@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                             <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">Yasmin</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">yasmin@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                           <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">Dina</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">dina@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <div class="card">
+                          <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">Kero</h3>
+                <p class="card-text">Designer</p>
+                <p class="card-text">kero@gmail.com</p>
+                <a href="#" class="btn lin">Contact</a>
+              </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div> -->
+<!--End about-->

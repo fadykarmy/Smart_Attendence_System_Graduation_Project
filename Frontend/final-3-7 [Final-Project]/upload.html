@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Face Recognition</title>
+  <!-- Include Bootstrap CSS once -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Additional CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/upload.css">
+  
+  <style>
+    /* Custom styles for the navbar */
+    .navbar {
+      background-color: #343a40; /* Dark background color */
+      padding-top: 0.75rem; /* Padding on top */
+      padding-bottom: 0.75rem; /* Padding on bottom */
+    }
+    
+    .navbar-brand img {
+      height: 40px; /* Adjust logo height */
+    }
+    
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.85); /* Nav link color */
+      font-weight: 1000; /* Nav link font weight */
+      transition: color 0.3s; /* Smooth color transition */
+    }
+    
+    .navbar-nav .nav-link:hover {
+      color: #ffffff; /* Hover color */
+    }
+    .text-center{
+        margin: 0px 0px 10px 0px;
+    }
+    /* Custom styles for the video element */
+    video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://smartattendanceapp.com/img/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Video Stream -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 class="text-center mb-4">Real-Time Face Recognition</h2>
+        <div class="text-center">
+          <button id="openCameraButton" class="btn btn-primary mb-3">Open Camera</button>
+          <button id="closeCameraButton" class="btn btn-danger mb-3" style="display:none;">Close Camera</button>
+          <video id="video" autoplay playsinline style="display:none;"></video>
+          <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+        <div id="results" class="text-center mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    const resultsDiv = document.getElementById('results');
+    const openCameraButton = document.getElementById('openCameraButton');
+    const closeCameraButton = document.getElementById('closeCameraButton');
+    let intervalId = null;
+
+    openCameraButton.addEventListener('click', () => {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+          video.style.display = 'block';
+          video.play();
+          openCameraButton.style.display = 'none'; // Hide open camera button
+          closeCameraButton.style.display = 'inline-block'; // Show close camera button
+          startCapturing();
+        })
+        .catch(err => {
+          console.error("Error accessing camera:", err);
+        });
+    });
+
+    closeCameraButton.addEventListener('click', () => {
+      if (video.srcObject) {
+        const stream = video.srcObject;
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        video.srcObject = null;
+        video.style.display = 'none'; // Hide video element
+        openCameraButton.style.display = 'inline-block'; // Show open camera button
+        closeCameraButton.style.display = 'none'; // Hide close camera button
+        clearInterval(intervalId); // Stop capturing frames
+        resultsDiv.innerHTML = ''; // Clear results
+      }
+    });
+
+    function startCapturing() {
+      intervalId = setInterval(captureFrame, 1000);
+    }
+
+    async function captureFrame() {
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const dataURL = canvas.toDataURL('image/jpeg');
+
+      const response = await fetch('http://172.31.227.4:8000/recognize/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ image: dataURL })
+      });
+      const recognizedNames = await response.json();
+      
+      if (recognizedNames.length > 0 && recognizedNames[0] !== "Unknown") {
+        resultsDiv.innerHTML = "Recognized: " + recognizedNames[0];
+        clearInterval(intervalId);
+      }
+    }
+  </script>
+</body>
+</html>

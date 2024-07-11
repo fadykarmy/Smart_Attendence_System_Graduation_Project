@@ -1,0 +1,115 @@
+:root {
+  --main-color: #ebf3e8;
+  --container-color: #04364a;
+  --section1: #ebf3e8;
+  --section2: #d2e3c8;
+  --section3: #ebf3e8;
+  /* --font-color: #3a4d39; */
+  /* --header-color:#85a183; */
+  --header-color: #176b87;
+  --btn-color: #638889;
+}
+body {
+  width: auto;
+  min-height: 100vh;
+
+  display: flex;
+  /* align-content: flex-start; */
+  flex-flow: column wrap;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+
+.navbar .container-fluid a.navbar-brand img {
+  width: 190px;
+  height: 50px;
+  margin-left: 20%;
+}
+.navbar {
+  background-color: var(--container-color);
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.068);
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.8s;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--section2);
+  text-decoration: none;
+  font-size: 19px;
+  transition: 0.3 all;
+}
+.main_header {
+  color: var(--container-color);
+}
+
+.btn {
+  color: var(--main-color);
+  font-size: 18px;
+  text-align: center;
+  background-color: var(--header-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border: none;
+  width: 200px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--container-color);
+  color: var(--section2);
+  /* letter-spacing: 2px; */
+  font-weight: bold;
+  text-decoration: none;
+}
+.left-b {
+  margin-left: 25%;
+}
+
+.submit-btn-contact {
+  color: var(--main-color);
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  background-color: var(--header-color);
+  /* background-image: linear-gradient(125deg, #7bc9ac,#53a0a1); */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  margin: 0px 0px 0px 5px;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.submit-btn-contact:hover {
+  text-decoration: none;
+  font-weight: bold;
+  /* transform: scale(1.1); */
+  color: var(--section2);
+  background-color: var(--container-color);
+}
+
+/* #courseName{
+  min-width: 350px;
+} */
+#courseSelect {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 1rem;
+  color: #000;
+  cursor: pointer;
+}

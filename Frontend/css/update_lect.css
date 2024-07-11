@@ -1,0 +1,169 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* text-transform: capitalize; */
+  transition: 0.2s linear;
+}
+:root {
+  --main-color: #ebf3e8;
+  --container-color: #04364a;
+  --section1: #ebf3e8;
+  --section2: #cedfc4;
+  --section3: #ebf3e8;
+  /* --font-color: #3a4d39; */
+  /* --header-color:#85a183; */
+  --header-color: #176b87;
+  --btn-color: #638889;
+}
+
+html {
+  /* font-size: 78%; */
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--btn-color);
+  border-radius: 5rem;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--container-color);
+  border-radius: 5rem;
+}
+
+body {
+  width: auto;
+  min-height: 100vh;
+  background-size: 100%;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+
+.navbar .container-fluid a.navbar-brand img {
+  width: 190px;
+  height: 50px;
+  margin-left: 20%;
+}
+.navbar {
+  background-color: var(--container-color);
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.068);
+}
+.navbar .navbar-nav .nav-link {
+  color: var(--section3);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--section2);
+  text-decoration: none;
+  font-size: 19px;
+  transition: 0.3 all;
+}
+/*End Navbar*/
+
+/*Start course*/
+
+.course {
+  /* background-color: var(--section1); */
+  overflow: hidden;
+  height: 100vh;
+}
+
+.course-content {
+  width: 80%;
+  height: 50%;
+  padding: 2% 0% 0% 5%;
+}
+
+.course .course-content .title {
+  color: var(--container-color);
+  font-size: 36px;
+  font-weight: 600;
+  /* margin: 0 0 8px 0; */
+}
+
+.details {
+  color: var(--header-color);
+  color: #04364a !important;
+  font-size: 23px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.row {
+  margin: 5px 0px 10px 0px;
+}
+/* #AttendanceInstruction {
+  margin-bottom: 10px;
+} */
+.btn {
+  margin: 0px 0px 0px 0px;
+}
+.course .course-content .btn .course-button {
+  background-color: #c4d2df;
+  color: var(--container-color);
+  border: 1px solid #04364ae5;
+  padding: 8px 20px;
+  transition: all 0.5s;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5%;
+}
+/* a:hover{
+ text-decoration: none;
+ font-size: 25px;
+} */
+.course .course-content .btn .course-button:hover {
+  cursor: pointer !important;
+  /* font-size: 19px; */
+  transform: scale(105%) !important;
+  text-decoration: none;
+}
+.course .course-content .btn .save:hover {
+  transform: scale(105%) !important;
+  cursor: pointer !important;
+}
+#courseSelect {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  /* margin-top: 3px; */
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 1rem;
+  color: #000;
+  cursor: pointer;
+}

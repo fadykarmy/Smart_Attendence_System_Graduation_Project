@@ -1,0 +1,595 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo";
+  transition: 0.5s all;
+  box-sizing: border-box;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #616161;
+  transition: opacity 0.75s, visibility 0.75s;
+  /* z-index: 4; */
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 12px solid #ddd;
+  border-top-color: #7449f5;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* Media Queries */
+@media (min-width: 800px) and (max-width: 1024px) {
+  html::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+  .sidebar {
+    width: 20% !important;
+    font-size: 10px !important;
+    height: 100vh !important;
+    float: none !important;
+    margin: auto !important;
+  }
+
+  .main {
+    width: 90% !important;
+  }
+  .intro {
+    width: 90% !important;
+    font-size: 20px !important;
+  }
+  .courses {
+    width: 150% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .view-course {
+    width: 50% !important;
+    left: 25% !important;
+  }
+
+  .profile {
+    width: 150% !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    float: right !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+  .sidebar {
+    width: 20% !important;
+    font-size: 10px !important;
+    height: 100vh !important;
+    float: none !important;
+    margin: auto !important;
+    /* position: fixed !important; */
+    /* float: none; */
+  }
+
+  .main {
+    width: 80% !important;
+  }
+
+  .intro {
+    width: 90% !important;
+    font-size: 20px !important;
+  }
+  .courses {
+    width: 160% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .view-course {
+    width: 50% !important;
+    left: 25% !important;
+  }
+
+  .profile {
+    width: 150% !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    float: right !important;
+  }
+}
+@media (min-width: 700px) and (max-width: 768px) {
+  .sidebar {
+    width: 20% !important;
+    font-size: 10px !important;
+    height: 100vh !important;
+    float: none !important;
+    margin: auto !important;
+  }
+  .main {
+    width: 80% !important;
+  }
+
+  .intro {
+    width: 90% !important;
+    font-size: 20px !important;
+  }
+
+  .titles a {
+    font-size: 50% !important;
+    margin: 0px 0px 0px 10px !important;
+    /* margin-left: 20% !important; */
+  }
+
+  #add {
+    font-size: 50% !important;
+    margin: 22px 0px 0px 10px !important;
+    float: right !important;
+    left: 50% !important;
+  }
+
+  .courses {
+    width: 200% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  .view-course {
+    width: 50% !important;
+    left: 25% !important;
+  }
+
+  .profile {
+    width: 150% !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    float: right !important;
+  }
+}
+
+html {
+  /* font-size: 78%; */
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #04364a;
+  border-radius: 5rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  letter-spacing: 1px;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: column wrap;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+
+.sidebar {
+  width: 18vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  /* align-items: center; */
+  background-color: #ffffff8c;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+.logo {
+  width: 100%;
+  /* height: 40%; */
+  background-color: #04364a;
+  position: relative;
+  top: 40px;
+  /* padding: 10px 20px; */
+}
+.sidebar .logo span {
+  text-align: center;
+  /* align-items: end; */
+  font-size: 25px;
+  font-weight: 800;
+  font-family: monospace;
+  letter-spacing: 2px;
+  color: #fff;
+  /* background-color: #04364a; */
+  padding: 0px 50px 0px 0px;
+  /* top: 1000%; */
+  justify-content: center;
+  align-items: center;
+
+  /* left: 20%; */
+  /* right: 20%; */
+  text-transform: uppercase;
+}
+
+.sidebar .main-btns {
+  width: 95%;
+  height: 40%;
+  background-color: aliceblue;
+  margin: 0 auto;
+  /* justify-content: ; */
+}
+.sidebar .main-btns,
+.sidebar .other-btns {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  background-color: transparent;
+}
+.sidebar .other-btns {
+  margin-top: 0;
+  width: 95%;
+  height: 25%;
+}
+.sidebar .btn {
+  width: 95%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 3px auto;
+  color: #1b1b1b;
+}
+.sidebar i {
+  font-size: 20px;
+  /* font-size: 2px; */
+  /* color: #616161; */
+}
+
+.sidebar span {
+  /* font-size: 18px; */
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+  /* color: #616161; */
+}
+.sidebar button:hover,
+.sidebar .btn:hover {
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(to right, #638889, #176b87);
+  cursor: pointer;
+}
+.dropdown-content .settings,
+.dropdown-content .signout {
+  display: flex;
+  align-items: center;
+}
+/* align-items: center; */
+.dropdown-content .settings:hover {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.dropdown-content .signout:hover,
+.dropdown-content .fa-right-from-bracket:hover {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: orangered;
+}
+
+.sidebar .settings:hover {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+}
+
+.sidebar .logout:hover {
+  background: linear-gradient(to right, #f85032, #e73827);
+}
+
+.sidebar span {
+  margin-left: 5px;
+}
+
+.profile {
+  width: 15%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(75, 75, 75, 0.356);
+  border-radius: 50px;
+}
+.profile .profile-img {
+  width: 40px;
+  height: 40px;
+  /* margin: 0px 150px 0px 10px; */
+}
+.profile i {
+  font-size: 21px;
+  color: #ffd200;
+}
+.profile i:hover,
+.profile .profile-img:hover,
+.profile-name:hover {
+  cursor: pointer;
+  filter: brightness(92%);
+}
+
+/* Dropdown arrow for profile */
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+#myDropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  border-radius: 10px;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  text-wrap: nowrap;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #1b1b1b9a;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  text-transform: capitalize;
+}
+.dropdown-content i {
+  margin-right: 8px;
+  color: #1b1b1b9a;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  text-decoration: none;
+  color: #474747;
+}
+
+.show {
+  display: block;
+}
+.headerPage .intro {
+  width: 75%;
+  height: 200px;
+  background-color: #04364a;
+  color: white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 21px;
+  position: relative;
+  /* overflow: auto; */
+}
+.coursesContainer {
+  /* margin-bottom: 10px; */
+
+  padding: 0% 5% 0% 6%;
+  display: flex;
+  flex-direction: column;
+}
+.course-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 3% 0% 3%;
+}
+.titles a {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+.add {
+  font-size: 21px;
+  margin-top: 9px;
+  margin-right: 50px;
+  color: #202020 !important;
+}
+.add:hover {
+  text-decoration: underline;
+}
+.courses {
+  width: 650px;
+  height: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 50px;
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+}
+
+.block-course {
+  width: 20%;
+  height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 5px;
+  border-radius: 10px;
+  padding-bottom: 15px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffffb9;
+  text-transform: capitalize;
+  position: relative;
+}
+.profile-img1 {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  margin-top: 200px;
+}
+
+.profile1 {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile1 .profile-img1:hover,
+.profile-name1:hover {
+  cursor: pointer;
+  filter: brightness(92%);
+}
+
+/* Dropdown arrow for profile */
+/* The container <div> - needed to position the dropdown content */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  text-wrap: nowrap;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  text-transform: capitalize;
+}
+.dropdown-content1 i {
+  margin-right: 8px;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content1 a:hover {
+  text-decoration: none;
+  background-color: #ddd;
+}
+
+.img-courses {
+  width: 100%;
+  height: 42%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 0;
+}
+
+.title {
+  position: relative;
+  bottom: 9%;
+  color: var(--container-color);
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 16px;
+  background-color: #b8b8b81c;
+  font-weight: bold;
+  box-shadow: 0px 1px 0px 0px #bebebecc;
+}
+.courseid {
+  position: relative;
+  top: 28%;
+  color: #aaa9a9d8;
+  word-wrap: break-word;
+  padding: 5px 5px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.level {
+  position: relative;
+  top: 26%;
+  padding: 0 20px;
+  font-size: 21px;
+  margin: 10px 0 40px;
+}
+
+.view-course {
+  background-color: #176b87;
+  border: none;
+  width: 100px;
+  margin: 0px auto;
+  color: rgb(255 255 255);
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 18px;
+  left: 13%;
+}
+.view-course:hover {
+  filter: brightness(120%);
+}
+
+.block-course:hover button {
+  color: white;
+}
+
+.headerPage {
+  width: 100%;
+  height: 20%;
+  padding: 3% 5% 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerIdx {
+  min-height: 150vh;
+  width: 82vw;
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+}

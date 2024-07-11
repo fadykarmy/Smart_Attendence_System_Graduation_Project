@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/update_lect.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <title>Edit Lecture</title>
+  </head>
+  <body style="background-color: #cbd2d8e5;">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main"
+          aria-controls="main"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="Allcourses.html"
+                >All Courses</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" aria-current="page" href="lecture.html"
+                >All Lectures</a
+              >
+            </li>
+            
+            <!-- <li class="nav-item">
+                  <a class="nav-link p-lg-3" href="firstHome.html">Why Chose us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link p-lg-3" href="firstHome.html">Services</a>
+                </li> -->
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+              </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="course" id="course">
+      <!-- <div class="heading-about">
+          <h2 class="title heading-section mt-4"></h2>
+        </div> -->
+      <!-- <div class="container">
+        <div class="course-img">
+          <img
+            src="https://learn.g2.com/hubfs/G2CM_FI064_Learn_Article_Images-Database_V1a.png"
+            alt=""
+            class="course-image mt-5"
+            width="200"
+            height="220"
+          />
+        </div> -->
+        <div class="course-content">
+          <h1 class="title">Edit Lecture</h1>
+          <hr>
+          <form class="details" id="updateForm">
+            <div class="row ms-12">
+              <!-- <div class="details col-md-4" id="lectureId"> -->
+                <!-- <div class="col-md-6">
+                  <label for="lectureId" class="form-label">Lecture Id <span style="color: red;">*</span></label>
+                  <input type="number" class="form-control" id="courseId" value="lecture 1" required>
+                </div> -->
+              <!-- <div class="details col-md-4" id="lectureName"> -->
+                <div class="col-md-6">
+                  <label for="lectureName" class="form-label">Lecture name <span style="color: red;">*</span></label>
+                  <input type="text" class="form-control" id="lectureName" value="lecture 1" required>
+                </div>
+                <!-- <h3 class="text-course text-capitalize">3</h3> -->
+              <!-- </div> -->
+              <div class="col-md-6">
+                <label for="lectureTime" class="form-label ms-2">Lecture time <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="lectureTime" value="" required>
+              </div>
+            </div>
+
+            <div class="row ms-12">
+              <!-- <div class="details col-md-4" id="Semester"> -->
+                <div class="col-md-6">
+                  <label for="lectureDate" class="form-label">Lecture date <span style="color: red;">*</span></label>
+                  <div class="input-group has-validation">
+                  <input type="date" class="form-control" id="lectureDate" value="" aria-describedby="inputGroupPrepend" required>
+                  </div>
+                </div>
+              <!-- </div> -->
+              <div class="col-md-6">
+                <label for="lectureLocation" class="form-label ms-2">Lecture location <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="lectureLocation" value="" aria-describedby="inputGroupPrepend" required>
+              </div>
+            </div>
+
+            <div class="row ms-12">
+              <div class="col-md-6">
+                <label for="courseSelect" class="ms-2">Select course:</label>
+                <select id="courseSelect">
+                    <option id="courseName" value="">Select course</option>
+                    <!-- <option value="" id="opt"></option> -->
+                </select><br>
+                  <!-- <input type="text" id="lectureNotes" class="form-control"  name="" aria-describedby="inputGroupPrepend"/>  -->
+              </div>
+              <div class="col-md-6">
+                <label for="lectureNotes" class="form-label ms-2">Lecture notes</label>
+                <br>
+                <input type="text" class="form-control" name="lectureNotes" id="lectureNotes"></input>
+                <!-- <input type="text" id="lectureNotes" class="form-control"  name="" aria-describedby="inputGroupPrepend"/>  -->
+              </div>
+            </div>
+            
+              <br />
+              <div class="btn col-md-12">
+                <!-- <a href="create_lecture.html" class="course-button rounded-pill col-md-3"
+                >Add Lecture</a
+              > -->
+              <button class="save course-button rounded-pill col-md-3 mb-4" id="save">Save change</button>
+              <a href="Allcourses.html" class="course-button rounded-pill col-md-3 mb-4 me-2">Back</a>
+              <!-- <a href="Allcourses.html" class="course-button rounded-pill col-md-3"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></a> -->
+              <!-- <a href="javascript:;" class="course-button rounded-pill col-md-3 ms-2 js-delete"
+                ><i class="fa-regular fa-trash-can"></i></a> -->
+              </div>
+          
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <!-- <script src="js/update_lect.js"></script> -->
+    <!-- <script src="js/All_lecture.js"></script> -->
+     <script src="js/lecture.js"></script>
+  </body>
+</html>

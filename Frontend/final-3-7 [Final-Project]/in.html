@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Courses</title>
+  <!-- Include necessary CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>List of Courses</h1>
+    <table class="table">
+      <thead class="block-course">
+        <tr class="lecture">
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Level</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="course-table" class="block-course"></tbody>
+    </table>
+  </div>
+
+  <!-- Include jQuery and Bootstrap JS (if not already included in your project) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Fetch courses from API
+      fetch(
+        "http://yasmeen84983.runasp.net/api/Course/GetAllCourses",
+        {
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEb2FhYUFobWVkIiwianRpIjoiOTgxMmMyMzktN2FmYS00YzBhLTkyNTYtYjFkNjZhMThjY2RkIiwiZW1haWwiOiJkb2FhMUBnbWFpbC5jb20iLCJ1aWQiOiJjODg5YTkzMy0xNWZhLTRlMDYtOWFhMS04NmFiZGUyNjE5ZmIiLCJyb2xlcyI6IlByb2Zlc3NvciIsImV4cCI6MTcwNzYwOTI2MywiaXNzIjoiU2VjdXJlQXBpIiwiYXVkIjoiU2VjdXJlQXBpVXNlciJ9.9qsx8WU_SZecuhBfKGORdvgt0JAUKYVuwdUk77G7kCI",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.ok) {
+          console.log("Courses fetched successfully");
+          return response.json();
+        } else {
+          throw new Error(
+            `Failed to fetch courses: ${response.status} ${response.statusText}`
+          );
+        }
+      })
+      .then((data) => {
+        // Create table rows for each course
+        data.forEach((course) => {
+          const courseTemplate = `
+            <tr class="course">
+              <td>${course.id}</td>
+              <td>${course.name}</td>
+              <td>${course.level}</td>
+              <td>
+                <a href="lect-cor.html?courseId=${course.id}" class="btn btn-primary btn-sm mr-2">
+                  Show Lectures
+                </a>
+                <button class="btn btn-success btn-sm add-lect" data-id="${course.id}">
+                  Add Lecture
+                </button>
+                <button class="btn btn-info btn-sm update-lec" data-id="${course.id}">
+                  Update Lecture
+                </button>
+                <button class="btn btn-danger btn-sm deleteBtn" data-id="${course.id}">
+                  Delete Course
+                </button>
+              </td>
+            </tr>
+          `;
+          $("#course-table").append(courseTemplate);
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    });
+  </script>
+</body>
+</html>

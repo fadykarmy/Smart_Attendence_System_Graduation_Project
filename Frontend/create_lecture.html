@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Lecture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/create_lecture.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main"
+            aria-controls="main"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="main">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="Allcourses.html">All Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="lecture.html">All Lectures</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link p-lg-3" aria-current="page" href="#">Statistics</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link p-lg-3" href="firstHome.html">Why Chose us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" href="firstHome.html">Services</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <br> 
+    <div class="container">
+      <h1 class="main_header">Add Lecture</h1>
+      <hr>
+      
+      
+      <br>
+        <form class="row g-3 needs-validation" id="lectureForm" novalidate>
+            <!-- <input type="hidden" class="form-control" id="lectureId" value="" required> -->
+            <div class="col-md-6">
+              <label for="lectureName" id="lecturename" class="form-label">Lecture name <span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="lectureName" value="lecture 1" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lectureTime" id="time" class="form-label ms-2">Lecture time <span style="color: red;">*</span></label>
+              <input type="time" class="form-control" id="lectureTime" value="" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lectureDate" id="date" class="form-label">Lecture date <span style="color: red;">*</span></label>
+              <div class="input-group has-validation">
+              <input type="date" class="form-control" id="lectureDate" aria-describedby="inputGroupPrepend" required>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="lectureLocation" id="location"  class="form-label ms-2">Lecture location <span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="lectureLocation" aria-describedby="inputGroupPrepend" required>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="courseSelect" id="coursename" class="ms-2">Select course <span style="color: red;">*</span></label>
+              <!-- <select id="courseSelect" required> -->
+              <select id="courseSelect" name="courseSelect" required>
+                  <option id="courseSelect" value="">Select course</option>
+                  <!-- <option value="" id="opt"></option> -->
+              </select><br>
+                <!-- <input type="text" id="lectureNotes" class="form-control"  name="" aria-describedby="inputGroupPrepend"/>  -->
+            </div>
+
+            <div class="col-md-6">
+                <label for="lectureNotes" class="form-label"style="">Lecture notes</label>
+                <br>
+                <input type="text" class="form-control mt-1" id="lectureNotes" value="None" name="lectureNotes" aria-describedby="inputGroupPrepend"></input>
+                <!-- <input type="text" id="lectureNotes" class="form-control"  name="" aria-describedby="inputGroupPrepend"/>  -->
+            </div>
+
+            <div class="col-md-9">
+              <a
+              href="Allcourses.html"
+              class="submit-btn-contact rounded-pill"
+              style="width: 200px"
+              >Back</a>
+            </div>
+            
+            <div class="col-md-3">
+              <button
+              href="lecture.html"
+              id="add-lecture-btn"
+              class="submit-btn-contact rounded-pill"
+              style="width: 200px; float: right;"
+              >Done</button>
+          <!-- </div>
+            <div class="col-md-3">
+              <button id="add-lecture-btn"> Add Lecture</button>
+            </div> -->
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/create_lecture.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

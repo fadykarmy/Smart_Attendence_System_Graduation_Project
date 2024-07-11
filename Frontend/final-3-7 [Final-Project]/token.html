@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Storage Example</title>
+</head>
+<body>
+    <button onclick="storeToken('localStorage')">Store Token in localStorage</button>
+    <button onclick="storeToken('sessionStorage')">Store Token in sessionStorage</button>
+    <button onclick="retrieveToken('localStorage')">Retrieve Token from localStorage</button>
+    <button onclick="retrieveToken('sessionStorage')">Retrieve Token from sessionStorage</button>
+    <button onclick="clearStorage()">Clear Storage</button>
+
+    <script>
+        const token = 'your_token_here';
+
+        function storeToken(storageType) {
+            if (storageType === 'localStorage') {
+                localStorage.setItem('token', token);
+                alert('Token stored in localStorage');
+            } else if (storageType === 'sessionStorage') {
+                sessionStorage.setItem('token', token);
+                alert('Token stored in sessionStorage');
+            } else {
+                alert('Invalid storage type');
+            }
+        }
+
+        function retrieveToken(storageType) {
+            let retrievedToken;
+            if (storageType === 'localStorage') {
+                retrievedToken = localStorage.getItem('token');
+                alert('Token retrieved from localStorage: ' + retrievedToken);
+            } else if (storageType === 'sessionStorage') {
+                retrievedToken = sessionStorage.getItem('token');
+                alert('Token retrieved from sessionStorage: ' + retrievedToken);
+            } else {
+                alert('Invalid storage type');
+            }
+        }
+
+        function clearStorage() {
+            localStorage.removeItem('token');
+            sessionStorage.removeItem('token');
+            alert('Storage cleared');
+        }
+    </script>
+</body>
+</html>

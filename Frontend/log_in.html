@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/log_in.css" />
+
+</head>
+<body>
+  <div class="container">
+    <h1>LOG IN</h1>
+    <hr width="100%"/>
+    <form id="loginForm" class="row g-3 needs-validation">
+      <div class="col-md-12">
+        <label for="validationCustomEmail" class="form-label">Email <span style="color: red;">*</span></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-12">
+        <label for="validationCustomEmail" class="form-label">Email <span style="color: red;">*</span></label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input
+            type="email"
+            class="form-control"
+            id="validationCustomEmail"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+      </div> -->
+
+      <div class="col-md-12">
+        <label for="validationCustom03" class="form-label">Password <span style="color: red;">*</span></label>
+        <div class="input-group">
+          <input
+            type="password"
+            class="form-control"
+            id="validationCustom03"
+            required
+          />
+          <span id="eyeicon" class="input-group-text" onclick="togglePasswordVisibility('validationCustom03', 'togglePassword')">
+            <i id="togglePassword" class="fas fa-eye-slash"></i>
+          </span>
+          <div class="invalid-feedback">Please enter correct password, Must be password with at least 8 characters including numbers, uppercase, lowercase letters, and character..</div>
+        </div>
+      </div>
+
+      <div class="col-9 mt-4">
+        <button
+          class="btn btn-success submit-btn-contact rounded-pill"
+          type="submit"
+        >
+          Log in
+        </button>
+      </div>
+
+      <!-- <div class="link col-12 mt-2 mb-1">
+        <a href="./forget_password.html" style="text-decoration: none">Forgot Password</a>
+      </div> -->
+      <hr width="10%" />
+      <div class="link col-12 mt-2">
+        Don't Have an Account?
+        <a href="sign_up.html" style="text-decoration: none">Sign Up</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function togglePasswordVisibility(passwordFieldId, toggleIconId) {
+      const passwordField = document.getElementById(passwordFieldId);
+      const toggleIcon = document.getElementById(toggleIconId);
+
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      } else {
+        passwordField.type = 'password';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      }
+    }
+
+    function highlightEmptyFields() {
+  let isValid = true;
+  const fields = [
+    { id: 'validationCustomEmail', label: 'Email' },
+    { id: 'validationCustom03', label: 'Password' },
+  ];
+
+  fields.forEach(field => {
+    const input = document.getElementById(field.id);
+    const label = document.querySelector(`label[for='${field.id}']`);
+
+    if (input.value.trim() === '') {
+      input.classList.add('is-invalid');
+      label.style.color = '#d32f2f'; // Set label color to red
+      label.style.fontWeight = 'bold';
+      isValid = false;
+    } else {
+      input.classList.remove('is-invalid');
+      label.style.color = ''; // Reset label color to default
+      label.style.fontWeight = '';
+    }
+  });
+
+  return isValid;
+}
+
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Collect form data
+      const formData = {
+        email: document.getElementById("validationCustomEmail").value,
+        password: document.getElementById("validationCustom03").value,
+      };
+
+      if (!highlightEmptyFields()) {
+        return; // Exit if any field is empty
+      }
+
+      const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(formData.email)) {
+        document.getElementById('validationCustomEmail').classList.add('is-invalid');
+        return;
+      } else {
+        document.getElementById('validationCustomEmail').classList.remove('is-invalid');
+      }
+
+      if (!passwordRegex.test(formData.password)) {
+        document.getElementById('validationCustom03').classList.add('is-invalid');
+        return;
+      } else {
+        document.getElementById('validationCustom03').classList.remove('is-invalid');
+      }
+
+      // Send data to the API for login
+      fetch("http://kero123.runasp.net/api/Auth/UserLogin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      .then((response) => {
+        if (response.ok) {
+          return response.json(); // Parse response body as JSON
+        } else {
+          throw new Error("Error logging in user");
+        }
+      })
+      .then((data) => {
+        // Redirect to index page after successful login
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    });
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

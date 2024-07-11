@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generated QR Code</title>
+    <link rel="stylesheet" href="css/QR code.css" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  </head>
+  <body>
+    <header id="header-pg">
+      <div class="container1">
+        <!-- Heading - Title Page -->
+        <a class="navbar-brand" href="firstHome.html">
+          <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="navigation-links">
+          <!-- List of Links -->
+          <ul>
+            <!-- Link 1 -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="Allcourses.html">All Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lecture.html">All Lectures</a>
+            </li>
+
+            <!-- Link 3 -->
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="about.html">About us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <h1 class="sub_header">Database/1</h1>
+    <div class="container">
+      <div id="qrcode"></div>
+      <div id="info">
+        <p id="generatedCode"></p>
+      </div>
+      <div class="details">
+        <p>Subject: Computer Science</p>
+        <p>Doctor: Dr. Smith</p>
+        <p>Date: February 10, 2024</p>
+        <p>Location: Room 101</p>
+      </div>
+      <br />
+      <a
+        href="lecture.html"
+        class="submit-btn-contact rounded-pill"
+        style="width: 150px"
+        >Back
+      </a>
+    </div>
+    <script>
+      // Get the parameter from the URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var data = urlParams.get("data");
+
+      // Display the generated code
+      document.getElementById("generatedCode").innerText =
+        "Generated Code: \n" + data;
+
+      // Generate QR code with the provided data
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: data || "", // Use the provided data or default to empty
+        width: 200,
+        height: 200,
+      });
+    </script>
+  </body>
+</html>

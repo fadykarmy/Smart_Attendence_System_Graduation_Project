@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo";
+  transition: 0.5s all;
+  box-sizing: border-box;
+}
+body {
+  width: auto;
+  max-height: 150vh;
+  letter-spacing: 1px;
+  /* display: flex;
+  align-content: flex-start;
+  flex-flow: column wrap; */
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+.qrShow {
+  width: 400px;
+  height: 400px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 32%;
+  /* margin: 0 auto; */
+  overflow: hidden;
+}
+.closeWindow {
+  position: absolute;
+  top: 0px !;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 45px;
+  cursor: pointer;
+  color: red;
+}
+.qrShow p {
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgb(82, 82, 82);
+}
+.hidden {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#generatedCode {
+  font-size: 20px;
+  font-weight: 700;
+}
+#generatedCode::before {
+  content: "or";
+  color: var(--btn-color);
+  height: 180px;
+  width: 5px;
+  background-color: #fff;
+  border-bottom: 2px solid rgb(58, 58, 58);
+  margin-right: 100px;
+  margin-left: 50px;
+}
+.twoCode,
+.courseDetails {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.edit-modal {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.course-content {
+  width: 49%;
+  font-size: 14px;
+  height: 73%;
+  display: flex;
+}
+.title-page {
+  font-size: 22px;
+  width: 140px;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  padding: 10px 0;
+  background-color: aliceblue;
+  top: 0;
+  top: 2%;
+  left: -5%;
+  margin: 0 auto;
+}
+.course-image {
+  height: 80%;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* position: relative; */
+}
+.edit-modal h3 {
+  font-size: 16px;
+  /* color: dodgerblue; */
+}
+.edit-modal span {
+  font-size: 17px;
+  color: dodgerblue;
+}
+.course-button {
+  background-color: cornflowerblue;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: #fff;
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/sign_up.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-u68rGZXD5/jF/AD5UVqD6lBUQp8yTt8U4k8fMEXkkz0KOI2rW3BI8lyQXurh6MnM" crossorigin="anonymous"> -->
+</head>
+<body>
+    
+    <div class="container">
+        <h1>SIGN UP</h1>
+        <hr>
+        <form class="row g-3 needs-validation" id="signupForm" novalidate>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">First name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="validationCustom01" value="" required>
+                <div class="invalid-feedback">
+                  Please enter your first name.
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Last name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="validationCustom02" value="" required>
+                <div class="invalid-feedback">
+                  Please enter your last name.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">User name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="validationCustom03" value="" required>
+                <div class="invalid-feedback">
+                  Please enter a valid username.
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                <label for="validationCustomEmail" class="form-label">Email <span style="color: red;">*</span></label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="inputGroupPrepend" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Password <span style="color: red;">*</span></label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="validationCustom04" required>
+                  <span id="eyeicon" class="input-group-text" onclick="togglePasswordVisibility('validationCustom04', 'togglePassword')">
+                    <i id="togglePassword" class="fas fa-eye-slash"></i>
+                  </span>
+                  <div class="invalid-feedback">
+                    Must be password with at least 8 characters including numbers, uppercase, lowercase letters, and character.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <label for="validationCustom05" class="form-label">Confirm Password <span style="color: red;">*</span></label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="validationCustom05" required>
+                  <span id="eyeicon" class="input-group-text" onclick="togglePasswordVisibility('validationCustom05', 'toggleConfirmPassword')">
+                    <i id="toggleConfirmPassword" class="fas fa-eye-slash"></i>
+                  </span>
+                  <div class="invalid-feedback">
+                    Confirm password must match password.
+                  </div>
+                </div>
+              </div>              
+
+              <div class="Remember col-6">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
+                  <label class="form-check-label" style="color: white;" for="invalidCheck2">
+                    Remember Password
+                  </label>
+              </div>
+  
+              <div class="col-12">
+                <button class="btn submit-btn-contact rounded-pill" type="submit">Sign up</button>
+              </div>
+  
+              <div class="login col-12" style="color: white;">
+                Already have an account?
+                <a href="./log_in.html" style="text-decoration: none;">Log in</a>
+              </div>
+        </form>
+    </div>
+
+    <script>
+      function togglePasswordVisibility(passwordFieldId, toggleIconId) {
+    const passwordField = document.getElementById(passwordFieldId);
+    const toggleIcon = document.getElementById(toggleIconId);
+
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    } else {
+        passwordField.type = 'password';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    }
+}
+
+function highlightEmptyFields() {
+    let isValid = true;
+    const fields = [
+        { id: 'validationCustom01', label: 'First name' },
+        { id: 'validationCustom02', label: 'Last name' },
+        { id: 'validationCustom03', label: 'User name' },
+        { id: 'validationCustomEmail', label: 'Email' },
+        { id: 'validationCustom04', label: 'Password' },
+        { id: 'validationCustom05', label: 'Confirm Password' }
+    ];
+
+    fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        let label = document.querySelector(`label[for='${field.id}']`);
+
+        if (field.id === 'validationCustomEmail') {
+            label = document.querySelector(`label[for='validationCustomEmail']`);
+        } else if (field.id === 'validationCustom04' || field.id === 'validationCustom05') {
+            label = document.querySelector(`label[for='${field.id}']`);
+        }
+
+        if (input.value.trim() === '') {
+            input.classList.add('is-invalid');
+            label.style.color = '#d32f2f';
+            label.style.fontWeight = 'bold';
+            isValid = false;
+        } else {
+            input.classList.remove('is-invalid');
+            label.style.color = '';
+            label.style.fontWeight = '';
+        }
+    });
+
+    // Password and Confirm Password validation
+    const passwordField = document.getElementById('validationCustom04');
+    const confirmPasswordField = document.getElementById('validationCustom05');
+    const togglePasswordIcon = document.getElementById('togglePassword');
+    const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPassword');
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+    // Validate Password
+    if (!passwordRegex.test(passwordField.value)) {
+        passwordField.classList.add('is-invalid');
+        togglePasswordIcon.classList.add('invalid'); // Add class to change color
+        toggleConfirmPasswordIcon.classList.add('invalid'); // Add class to change color
+        isValid = false;
+    } else {
+        passwordField.classList.remove('is-invalid');
+        togglePasswordIcon.classList.remove('invalid'); // Remove class to reset color
+    }
+
+    // Validate Confirm Password
+    if (confirmPasswordField.value !== passwordField.value) {
+        confirmPasswordField.classList.add('is-invalid');
+        toggleConfirmPasswordIcon.classList.add('invalid'); // Add class to change color
+        isValid = false;
+    } else {
+        confirmPasswordField.classList.remove('is-invalid');
+        toggleConfirmPasswordIcon.classList.remove('invalid'); // Remove class to reset color
+    }
+
+    return isValid;
+}
+
+document.getElementById('signupForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Form data collection and validation
+    const formData = {
+        firstName: document.getElementById('validationCustom01').value,
+        lastName: document.getElementById('validationCustom02').value,
+        username: document.getElementById('validationCustom03').value,
+        email: document.getElementById('validationCustomEmail').value,
+        password: document.getElementById('validationCustom04').value,
+        confirmPassword: document.getElementById('validationCustom05').value
+    };
+
+    if (!highlightEmptyFields()) {
+        return;
+    }
+
+    // Regular expressions for additional validation
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const usernameRegex = /^[a-zA-Z0-9]+$/;
+
+    // Validate Password with regex
+    if (!passwordRegex.test(formData.password)) {
+        document.getElementById('validationCustom04').classList.add('is-invalid');
+        return;
+    } else {
+        document.getElementById('validationCustom04').classList.remove('is-invalid');
+    }
+
+    // Confirm Password match
+    if (formData.password !== formData.confirmPassword) {
+        document.getElementById('validationCustom05').classList.add('is-invalid');
+        document.getElementById('toggleConfirmPassword').classList.add('invalid'); // Add class to change color of eye icon
+        document.getElementById('validationCustom05').nextElementSibling.innerHTML = 'Passwords do not match.'; // Display error message
+        return;
+    } else {
+        document.getElementById('validationCustom05').classList.remove('is-invalid');
+        document.getElementById('toggleConfirmPassword').classList.remove('invalid'); // Remove class to reset color of eye icon
+        document.getElementById('validationCustom05').nextElementSibling.innerHTML = ''; // Clear error message
+    }
+
+    // Validate Email with regex
+    if (!emailRegex.test(formData.email)) {
+        document.getElementById('validationCustomEmail').classList.add('is-invalid');
+        return;
+    } else {
+        document.getElementById('validationCustomEmail').classList.remove('is-invalid');
+    }
+
+    // Validate Username with regex
+    if (!usernameRegex.test(formData.username)) {
+        document.getElementById('validationCustom03').classList.add('is-invalid');
+        return;
+    } else {
+        document.getElementById('validationCustom03').classList.remove('is-invalid');
+    }
+
+    try {
+      const response = await fetch('http://yasmeentest55847.runasp.net/api/Auth/SignUpProfessor', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        // // Send form data to backend API for registration
+        // const response = await fetch('http://yasmeentest55847.runasp.net/api/Auth/SignUpProfessor', {
+        //     method: 'POST',
+        //     headers: {
+        //         Authorization: "Bearer <your_token_here>",
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(formData)
+        // });
+
+        if (response.ok) {
+            window.location.href = 'log_in.html';
+        } else {
+            console.error('HTTP Error:', response.status);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

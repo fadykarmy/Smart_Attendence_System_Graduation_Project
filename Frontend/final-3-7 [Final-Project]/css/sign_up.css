@@ -1,0 +1,142 @@
+:root {
+  --main-color: #ebf3e8;
+  --container-color: #04364a;
+  --section1: #ebf3e8;
+  --section2: #d2e3c8;
+  --section3: #ebf3e8;
+  /* --font-color: #3a4d39; */
+  /* --header-color:#85a183; */
+  --header-color: #176b87;
+  --btn-color: #638889;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+
+.container {
+  background-color: var(--container-color);
+  max-width: 900px;
+  padding: 15px;
+  border-radius: 15px;
+  align-items: center;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  /* margin-left: 280px;
+  margin-top: 9px; */
+  /* margin-right: 100px; */
+}
+
+.form-label {
+  color: var(--section2);
+  font-size: 1.3rem;
+}
+
+button.btn {
+  width: 100%;
+  background-color: #a8c7cf;
+  color: var(--container-color);
+  /* background-image: linear-gradient(125deg, #7bc9ac,#53a0a1);
+    border-color: var(--container-color); */
+}
+
+button.btn:hover {
+  width: 100%;
+  color: var(--section2);
+  font-weight: bold;
+  background-color: var(--btn-color);
+  /* background-image: linear-gradient(125deg, #7bc9ac,#53a0a1);
+    border-color: var(--container-color); */
+}
+
+.login {
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  color: #be9667;
+  font-style: italic;
+  font-weight: bold;
+}
+
+a:hover {
+  /* color: #be9667; */
+  /* font-size: large; */
+  letter-spacing: 1px;
+}
+
+.Remember {
+  font-style: italic;
+}
+h1 {
+  color: var(--section2);
+}
+
+.submit-btn-contact {
+  color: var(--main-color);
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  background-color: var(--header-color);
+  /* background-image: linear-gradient(125deg, #7bc9ac,#53a0a1); */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  /* margin: 0 0px 0 0px; */
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.submit-btn-contact:hover {
+  text-decoration: none;
+  font-weight: bold;
+  /* transform: scale(1.1); */
+  color: var(--section2);
+  background-color: var(--container-color);
+}
+#inputGroupPrepend {
+  background-color: #e6eef0;
+}
+#inputGroupPrepend:hover {
+  cursor: pointer;
+  filter: opacity(60%);
+  color: black;
+  font-weight: bold;
+}
+input[type="text"],
+[type="email"] {
+  border-top-right-radius: 25px;
+}
+#eyeicon {
+  background-color: #e6eef0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 6px;
+}
+#eyeicon:hover {
+  cursor: pointer;
+  filter: opacity(60%);
+  color: black;
+  font-weight: bold;
+}
+
+/* Adjust eye icon color based on class */
+.fa-eye,
+.fa-eye-slash {
+  color: #6c757d; /* Default color */
+}
+
+/* Adjust eye icon color based on class */
+.fa-eye.invalid,
+.fa-eye-slash.invalid {
+  color: #d32f2f; /* Red color for invalid state */
+}

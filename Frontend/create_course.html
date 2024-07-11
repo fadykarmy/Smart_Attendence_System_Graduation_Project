@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Course</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+
+  <link rel="stylesheet" href="./css/create_course.css">
+  
+  <!-- <script defer src="./js/create_course.js"></script>   -->
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://smartattendanceapp.com/img/logo.png" alt="" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main"
+        aria-controls="main"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="main">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+          <li class="nav-item">
+            <a class="nav-link p-lg-3" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-lg-3" aria-current="page" href="Allcourses.html">All Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-lg-3" aria-current="page" href="lecture.html">All Lectures</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link p-lg-3" aria-current="page" href="firstHome.html">Statistics</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link p-lg-3" href="about.html">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-lg-3" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+
+  <br> 
+  <div class="container">
+    <h1 class="main_header">Add Course</h1>
+    <hr>
+    <form class="row g-3 needs-validation" id="Addcourseform" novalidate>
+      <!-- <input type="hidden" class="form-control" id="courseId" value="" required> -->
+      <div class="col-md-6">
+        <label for="courseName" id="coursename" class="form-label">Course name <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" id="courseName" required/>
+      </div>
+
+      <div class="col-md-6">
+        <label for="level" id="Level" class="form-label">Level <span style="color: red;">*</span></label>
+        <input type="number" min="1" max="4" id="level" class="form-control" required /> 
+      </div> 
+
+      <div class="col-md-6">
+        <label for="Semester" id="semester" class="form-label">Semester <span style="color: red;">*</span></label>
+        <input type="number" min="1" max="3" id="Semester" class="form-control" required/> 
+      </div>
+
+      <div class="col-md-6">
+        <label for="departement" class="form-label">Departement</label>
+        <input type="text" id="departement" class="form-control"/> 
+      </div>
+
+      <div class="col-md-6">
+        <label for="creditHours" class="form-label">Credit hours</label>
+        <input type="number" id="creditHours" class="form-control" value="3"/>
+      </div>
+
+      <div class="col-md-6">
+        <label for="rate" class="form-label">Lowest Attendance Rate</label>
+        <input type="text" class="form-control" id="rate"  placeholder="from 1 to a"/>
+      </div>
+      
+      <div class="col-md-12">
+        <label for="courseNotes" class="form-label">Attendance Instruction</label>
+        <input type="text" id="courseNotes" value="None" class="form-control"></input>
+      </div>
+
+      <div class="col-md-6">
+        <a href="Allcourses.html" class="submit-btn-contact rounded-pill " style="width: 200px">Back</a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="Allcourses.html" id="add-course" class="submit-btn-contact rounded-pill" style="width: 200px; float: right;">Add</a>
+      </div>
+    </form>  
+  </div>
+  <script src="js/create_course.js"></script>
+  <!-- <script>
+    document.getElementById('add-course').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Check if the required fields are filled
+      var courseName = document.getElementById('courseName').value;
+      var level = document.getElementById('level').value;
+      var semester = document.getElementById('Semester').value;
+      
+      if (courseName.trim() === '') {
+        document.getElementById('courseName').classList.add('is-invalid');
+      } else {
+        document.getElementById('courseName').classList.remove('is-invalid');
+      }
+      
+      if (level.trim() === '') {
+        document.getElementById('level').classList.add('is-invalid');
+      } else {
+        document.getElementById('level').classList.remove('is-invalid');
+      }
+      
+      if (semester.trim() === '') {
+        document.getElementById('Semester').classList.add('is-invalid');
+      } else {
+        document.getElementById('Semester').classList.remove('is-invalid');
+      }
+      
+      if (courseName.trim() === '' || level.trim() === '' || semester.trim() === '') {
+        alert('Please fill out all required fields.');
+      } else {
+        // If all required fields are filled, submit the form
+        document.getElementById('Addcourseform').submit();
+      }
+    });
+  </script> -->
+  
+</body>
+</html>

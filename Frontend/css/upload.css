@@ -1,0 +1,123 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* text-transform: capitalize; */
+  transition: 0.2s linear;
+}
+
+html {
+  /* font-size: 78%; */
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--container-color);
+  border-radius: 5rem;
+}
+
+:root {
+  --main-color: #dafffb;
+  --container-color: #04364a;
+  --section1: #ebf3e8;
+  --section2: #d2e3c8;
+  --section3: #ebf3e8;
+  --font-color: #3a4d39;
+  /* --header-color:#85a183; */
+  --header-color: #176b87;
+  --btn-color: #638889;
+}
+/* :root{
+    --color: #118ab2;
+    --main_color: #164863;
+    --green_color:#427D9D;
+    --btn_color:#9BBEC8;
+    --btn_color_hover:#967a48;
+    --bach_color:#DDF2FD;
+      
+  } */
+body {
+  background: #8360c3;
+  background: -webkit-linear-gradient(to left, #2ebf91, #6062c3);
+  background: linear-gradient(to left, #2ebf91, #3a78c9);
+}
+
+.main-btn {
+  background-color: #04364a73;
+  color: var(--main-color);
+  /* border: 1px solid #04364a; */
+  font-size: 18px;
+  padding: 3px 20px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.main-btn:hover {
+  text-decoration: none;
+  /* letter-spacing: 2px; */
+  transform: scale(1.1);
+  color: var(--main-color);
+}
+
+/*Start Navbar*/
+/* .navbar .container-fluid a.navbar-brand{
+    font-size: 2.5em;
+  } */
+.navbar .container-fluid a.navbar-brand img {
+  width: 190px;
+  height: 55px;
+}
+.navbar {
+  /* #065d80 */
+  background-color: var(--container-color);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.068);
+  /* height: 85px; */
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  /* color: var(--font-color); */
+  text-decoration: none;
+  font-size: 23px;
+  transition: 0.3 all;
+}
+
+.navbar .navbar-toggler {
+  color: var(--main-color);
+  font-size: 15px;
+  border-color: var(--main-color);
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+  border-color: var(--header-color);
+}
+
+.modal {
+  margin-bottom: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -18,4 +18,3 @@ Protection against cheating and fraud.
 
 
 
-![Models experment](https://github.com/user-attachments/assets/5d11384a-c2a3-49f8-ae92-417d9839bc4a)
